@@ -1,51 +1,44 @@
-﻿@page
+﻿@model TemperatureConvert.Models.TemperatureConversionViewModel
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Temperature Conversion</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Temperature Conversion</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateLastEnteredUnit(unit) {
+            document.getElementById('lastEnteredUnit').value = unit;
+        }
+    </script>
 </head>
 <body>
 <div class="container">
     <div class="row mt-5">
         <div class="col-md-6 offset-md-3">
             <h1 class="text-center mb-4">Temperature Conversion</h1>
-            <div class="input-group mb-3">
-                <span class="input-group-text">Celsius</span>
-                <input type="number" id="celsius" class="form-control" placeholder="Enter Celsius" oninput="convertTo('F')" />
-            </div>
-            <div class="input-group">
-                <span class="input-group-text">Fahrenheit</span>
-                <input type="number" id="fahrenheit" class="form-control" placeholder="Enter Fahrenheit" oninput="convertTo('C')" />
-            </div>
+            <form asp-controller="Home" asp-action="Index" method="post">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Celsius</span>
+                    <input asp-for="TemperatureConversion.Celsius" class="form-control" placeholder="Enter Celsius" 
+                           value="@(Model.TemperatureConversion != null ? Model.TemperatureConversion.Celsius.ToString() : "")" oninput="updateLastEnteredUnit('Celsius')"/>
+                    <span asp-validation-for="TemperatureConversion.Celsius" class="text-danger"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Fahrenheit</span>
+                    <input asp-for="TemperatureConversion.Fahrenheit" class="form-control" placeholder="Enter Fahrenheit" 
+                           value="@(Model.TemperatureConversion != null ? Model.TemperatureConversion.Fahrenheit.ToString() : "")" oninput="updateLastEnteredUnit('Fahrenheit')"/>
+                    <span asp-validation-for="TemperatureConversion.Fahrenheit" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="TemperatureConversion.LastEnteredUnit" id="lastEnteredUnit"/>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Convert</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-
-<script>
-        function convertTo(targetUnit) {
-            const celsiusInput = document.getElementById("celsius");
-            const fahrenheitInput = document.getElementById("fahrenheit");
-
-            let celsius = parseFloat(celsiusInput.value);
-            let fahrenheit = parseFloat(fahrenheitInput.value);
-
-            if (targetUnit === 'F') {
-                if (isNaN(celsius)) {
-                    fahrenheitInput.value = '';
-                } else {
-                    fahrenheitInput.value = ((celsius * 9/5) + 32).toFixed(2);
-                }
-            } else {
-                if (isNaN(fahrenheit)) {
-                    celsiusInput.value = '';
-                } else {
-                    celsiusInput.value = ((fahrenheit - 32) * 5/9).toFixed(2);
-                }
-            }
-        }
-    </script>
 </body>
 </html>

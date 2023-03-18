@@ -15,7 +15,29 @@ namespace TemperatureConvert.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new TemperatureConversionViewModel
+            {
+                TemperatureConversion = new TemperatureConversion
+                {
+                    Celsius = 100,
+                    Fahrenheit = 212
+                }
+            });
+        }
+
+        [HttpPost]
+        public IActionResult Index(TemperatureConversionViewModel model)
+        {
+            if (!double.IsNaN(model.TemperatureConversion.Celsius) && model.TemperatureConversion.LastEnteredUnit == "Celsius")
+            {
+                model.TemperatureConversion.Fahrenheit = model.TemperatureConversion.Celsius * 9 / 5 + 32;
+            }
+            else if (!double.IsNaN(model.TemperatureConversion.Fahrenheit) && model.TemperatureConversion.LastEnteredUnit == "Fahrenheit")
+            {
+                model.TemperatureConversion.Celsius = (model.TemperatureConversion.Fahrenheit - 32) * 5 / 9;
+            }
+
+            return View(model);
         }
 
         public IActionResult Privacy()

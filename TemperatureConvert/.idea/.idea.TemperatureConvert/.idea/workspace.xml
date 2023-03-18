@@ -15,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="2867" />
+    <option name="totalTimeSeconds" value="5872" />
     <option name="idleThresholdMs" value="600000" />
   </component>
   <component name="Git.Settings">
@@ -28,6 +28,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/projects/temperature-convert/TemperatureConvert/TemperatureConvert/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/projects/temperature-convert/TemperatureConvert/TemperatureConvert/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/projects/temperature-convert/TemperatureConvert/TemperatureConvert/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/projects/temperature-convert/TemperatureConvert/TemperatureConvert/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/projects/temperature-convert/TemperatureConvert/TemperatureConvert/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
