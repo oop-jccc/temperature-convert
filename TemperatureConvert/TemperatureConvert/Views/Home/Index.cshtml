@@ -1,8 +1,51 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Temperature Conversion</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center mb-4">Temperature Conversion</h1>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Celsius</span>
+                <input type="number" id="celsius" class="form-control" placeholder="Enter Celsius" oninput="convertTo('F')" />
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Fahrenheit</span>
+                <input type="number" id="fahrenheit" class="form-control" placeholder="Enter Fahrenheit" oninput="convertTo('C')" />
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+        function convertTo(targetUnit) {
+            const celsiusInput = document.getElementById("celsius");
+            const fahrenheitInput = document.getElementById("fahrenheit");
+
+            let celsius = parseFloat(celsiusInput.value);
+            let fahrenheit = parseFloat(fahrenheitInput.value);
+
+            if (targetUnit === 'F') {
+                if (isNaN(celsius)) {
+                    fahrenheitInput.value = '';
+                } else {
+                    fahrenheitInput.value = ((celsius * 9/5) + 32).toFixed(2);
+                }
+            } else {
+                if (isNaN(fahrenheit)) {
+                    celsiusInput.value = '';
+                } else {
+                    celsiusInput.value = ((fahrenheit - 32) * 5/9).toFixed(2);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
