@@ -1,4 +1,4 @@
-# Temperature Convert - 1.0-ui Branch
+# Temperature Convert - 1.0-client-side Branch
 
 ## Branch Purpose
 
@@ -47,11 +47,11 @@ Browser (Client-Side)
 
 ### Running the Application
 
-1. **Clone and switch to 1.0-ui branch**:
+1. **Clone and switch to 1.0-client-side branch**:
    ```bash
    git clone https://github.com/d-german/temperature-convert.git
    cd temperature-convert
-   git checkout 1.0-ui
+   git checkout 1.0-client-side
    ```
 
 2. **Navigate to project directory**:
@@ -159,11 +159,11 @@ function convertTo(targetUnit) {
 - Bootstrap components for professional styling
 - No changes to controller or backend logic
 
-### Contrasted with 2.0-server Branch
+### Contrasted with 2.0-server-side Branch
 
 #### Architectural Differences
 
-| Aspect | 1.0-ui (This Branch) | 2.0-server Branch |
+| Aspect | 1.0-client-side (This Branch) | 2.0-server-side Branch |
 |--------|---------------------|-------------------|
 | **Processing Location** | Client-side (Browser) | Server-side (ASP.NET Core) |
 | **User Experience** | Real-time, instant conversion | Form submission required |
@@ -205,6 +205,6 @@ This branch demonstrates:
 
 ## Next Steps
 
-- **Explore 2.0-server branch** to see how the same functionality is implemented server-side
+- **Explore 2.0-server-side branch** to see how the same functionality is implemented server-side
 - **Compare approaches** to understand architectural trade-offs
 - **Consider hybrid approaches** that combine client and server benefits
