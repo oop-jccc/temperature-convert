@@ -1,4 +1,4 @@
-# Temperature Convert - 2.0-server Branch
+# Temperature Convert - 2.0-server-side Branch
 
 ## Branch Purpose
 
@@ -50,11 +50,11 @@ ASP.NET Core MVC (Server-Side)
 
 ### Running the Application
 
-1. **Clone and switch to 2.0-server branch**:
+1. **Clone and switch to 2.0-server-side branch**:
    ```bash
    git clone https://github.com/d-german/temperature-convert.git
    cd temperature-convert
-   git checkout 2.0-server
+   git checkout 2.0-server-side
    ```
 
 2. **Navigate to project directory**:
@@ -199,11 +199,11 @@ public class HomeController : Controller
 - **Enhanced Controller**: GET and POST action methods with business logic
 - **Strongly-Typed View**: Razor view with model binding and validation
 
-### Contrasted with 1.0-ui Branch
+### Contrasted with 1.0-client-side Branch
 
 #### Architectural Differences
 
-| Aspect | 1.0-ui Branch | 2.0-server (This Branch) |
+| Aspect | 1.0-client-side Branch | 2.0-server-side (This Branch) |
 |--------|---------------|---------------------------|
 | **Processing Location** | Client-side (Browser) | Server-side (ASP.NET Core) |
 | **User Experience** | Real-time, instant conversion | Form submission required |
@@ -244,7 +244,7 @@ This branch demonstrates:
 
 ## Next Steps
 
-- **Compare with 1.0-ui branch** to understand client vs server trade-offs
+- **Compare with 1.0-client-side branch** to understand client vs server trade-offs
 - **Explore main branch** to see the foundation both branches build upon
 - **Consider hybrid approaches** that combine real-time UI with server validation
 - **Add features** like data persistence, logging, or API endpoints
