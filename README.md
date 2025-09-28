@@ -1,210 +1,146 @@
-# Temperature Convert - Main Branch
+﻿# temperature-convert
 
-## Branch Purpose
+[![.NET CI/CD Pipeline](https://github.com/oop-jccc/temperature-convert/actions/workflows/ci.yml/badge.svg)](https://github.com/oop-jccc/temperature-convert/actions/workflows/ci.yml)
 
-This is the **baseline branch** containing a standard ASP.NET Core MVC web application template. It serves as the foundation for the temperature conversion project, demonstrating the initial project structure before any custom functionality is implemented.
+This repository contains a .NET application with a fully configured development environment for optimal productivity.
 
-## Key Features
+## Quick Start
 
-- **Standard ASP.NET Core MVC Template**: Clean, unmodified project structure
-- **Bootstrap Integration**: Pre-configured responsive UI framework
-- **Basic Navigation**: Home and Privacy pages with standard layout
-- **Development Foundation**: Ready-to-extend architecture for custom functionality
-- **Modern Framework**: Built on ASP.NET Core 8.0 for optimal performance
+### Option 1: GitHub Codespaces (Recommended)
+The fastest way to get started is using GitHub Codespaces, which provides a fully configured development environment in the cloud.
 
-### Technology Stack
-- **Framework**: ASP.NET Core 8.0
-- **Pattern**: Model-View-Controller (MVC)
-- **Frontend**: Razor Views with Bootstrap 5.1
-- **Backend**: C# with minimal controller logic
+1. Click the **Code** button on this repository
+2. Select **Codespaces** tab
+3. Click **Create codespace on main**
+4. Wait for the environment to initialize (this may take a few minutes)
+5. Once ready, you can immediately start coding with full IntelliSense and debugging support
 
-### Project Structure
+### Option 2: Local Development with VS Code
+1. **Prerequisites:**
+   - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+   - [Visual Studio Code](https://code.visualstudio.com/)
+   - [C# Dev Kit extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+
+2. **Clone and Setup:**
+   ```bash
+   git clone https://github.com/USER/REPO.git
+   cd REPO
+   code .
+   ```
+
+3. **Restore Dependencies:**
+   ```bash
+   dotnet restore TemperatureConvert\TemperatureConvert\TemperatureConvert.csproj
+   ```
+
+## Build and Debug
+
+### Using VS Code Tasks
+This repository includes pre-configured VS Code tasks for common operations:
+
+- **Build:** `Ctrl+Shift+P` â†’ "Tasks: Run Task" â†’ "build"
+- **Run:** `Ctrl+Shift+P` â†’ "Tasks: Run Task" â†’ "run"
+- **Clean:** `Ctrl+Shift+P` â†’ "Tasks: Run Task" â†’ "clean"
+- **Watch:** `Ctrl+Shift+P` â†’ "Tasks: Run Task" â†’ "watch" (auto-rebuilds on file changes)
+
+### Using Command Line
+```bash
+# Navigate to the project directory
+cd TemperatureConvert\TemperatureConvert
+
+# Restore dependencies
+dotnet restore
+
+# Build the project
+dotnet build
+
+# Run the application
+dotnet run
+
+# Clean build artifacts
+dotnet clean
+
+# Watch for changes and auto-rebuild
+dotnet watch run
+```
+
+### Debugging in VS Code
+1. Open the project in VS Code
+2. Set breakpoints by clicking in the left margin of the code editor
+3. Press `F5` or go to **Run and Debug** panel
+4. Select ".NET Core Launch (console)" configuration
+5. The debugger will start and stop at your breakpoints
+
+## Project Structure
+
 ```
 TemperatureConvert/
-├── Controllers/
-│   └── HomeController.cs          # Basic MVC controller
-├── Views/
-│   ├── Home/
-│   │   ├── Index.cshtml           # Welcome page
-│   │   └── Privacy.cshtml         # Privacy policy page
-│   └── Shared/
-│       ├── _Layout.cshtml         # Main layout template
-│       └── _ViewStart.cshtml      # View configuration
-├── wwwroot/                       # Static files (CSS, JS, images)
-├── appsettings.json              # Application configuration
-└── Program.cs                    # Application entry point
+â”œâ”€â”€ TemperatureConvert.csproj    # Project configuration
+â”œâ”€â”€ Program.cs                     # Application entry point
+â””â”€â”€ ...                           # Additional source files
 ```
 
-## How to Run
+## Development Environment Features
 
-### Prerequisites
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or later
-- Any IDE that supports .NET (Visual Studio, VS Code, Rider)
+### VS Code Configuration
+- **IntelliSense:** Full C# code completion and suggestions
+- **Debugging:** Integrated debugging with breakpoints and variable inspection
+- **Tasks:** Pre-configured build, run, and test tasks
+- **Extensions:** Automatically installed C# development extensions
 
-### Running the Application
+### DevContainer/Codespaces Features
+- **High-Performance Environment:** 8 CPU cores, 16GB RAM
+- **Pre-installed Extensions:**
+  - C# Dev Kit with full language support
+  - GitHub Copilot for AI-assisted coding
+  - Visual Assist for enhanced productivity
+  - Better C# syntax highlighting
+  - IL Spy for .NET decompilation
+  - NuGet Gallery integration
+  - Coverage gutters for test coverage
+  - REST Client for API testing
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/d-german/temperature-convert.git
-   cd temperature-convert
-   ```
+### Continuous Integration
+- **Automated Builds:** Every push and pull request triggers automated builds
+- **Multi-job Pipeline:** Build, test, code quality, and security scanning
+- **Artifact Storage:** Build outputs are stored for 30 days
+- **Cross-branch Support:** CI runs on all branches to ensure consistency
 
-2. **Ensure you're on the main branch**:
-   ```bash
-   git checkout main
-   ```
+## Contributing
 
-3. **Navigate to project directory**:
-   ```bash
-   cd TemperatureConvert
-   ```
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
+3. Make your changes and commit: `git commit -m "Add your feature"`
+4. Push to your fork: `git push origin feature/your-feature-name`
+5. Create a Pull Request
 
-4. **Restore dependencies**:
-   ```bash
-   dotnet restore
-   ```
+## Code Style
 
-5. **Run the application**:
-   ```bash
-   dotnet run
-   ```
+This project follows standard C# coding conventions:
+- PascalCase for public members and types
+- camelCase for private fields and local variables
+- Meaningful names for classes, methods, and variables
+- XML documentation comments for public APIs
 
-6. **Access the application**:
-   - Open browser to `https://localhost:7065` or `http://localhost:5076`
-   - You'll see the standard ASP.NET Core welcome page
+## Troubleshooting
 
-## Code Highlights
+### Common Issues
 
-### Basic HomeController.cs
-```csharp
-public class HomeController : Controller
-{
-    private readonly ILogger<HomeController> _logger;
+**Build Errors:**
+- Ensure .NET 8.0 SDK is installed
+- Run `dotnet restore` to restore NuGet packages
+- Check that you're in the correct directory
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+**VS Code Issues:**
+- Install the C# Dev Kit extension
+- Reload VS Code window: `Ctrl+Shift+P` â†’ "Developer: Reload Window"
+- Check that .NET is properly installed: `dotnet --version`
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+**Codespaces Issues:**
+- Wait for the environment to fully initialize
+- If extensions aren't working, try rebuilding the container
+- Check the terminal for any error messages during setup
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+---
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
-}
-```
-
-### Standard Index.cshtml
-```html
-@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-```
-
-### Key Implementation Details
-- **MVC Pattern**: Clear separation of Models, Views, and Controllers
-- **Dependency Injection**: Built-in DI container with logger injection
-- **Error Handling**: Standard error page with request tracking
-- **Responsive Design**: Bootstrap framework for mobile-friendly UI
-- **Configuration**: JSON-based application settings
-
-## Architecture Overview
-
-### MVC Architecture
-```
-ASP.NET Core MVC
-├── Models (Data & Business Logic)
-├── Views (User Interface)
-└── Controllers (Request Handling)
-```
-
-### Request Flow
-1. User requests a URL
-2. Routing engine maps URL to controller action
-3. Controller processes the request
-4. Controller returns a view with optional model data
-5. View engine renders HTML response
-6. Response sent back to user's browser
-
-## Comparison with Other Branches
-
-### What Other Branches Add
-
-#### **1.0-client-side Branch**
-- **Client-Side Temperature Conversion**: JavaScript-based real-time conversion
-- **Interactive UI**: Input fields with instant feedback
-- **No Server Processing**: All calculations done in browser
-- **Real-Time Experience**: Immediate results without form submission
-
-#### **2.0-server-side Branch**
-- **Server-Side Processing**: Full MVC implementation with models
-- **Form-Based Workflow**: Traditional web form submission
-- **Data Models**: Proper separation with dedicated model classes
-- **Server-Side Validation**: Robust validation capabilities
-- **Enterprise Architecture**: Scalable, testable, maintainable structure
-
-### Why Start with Main Branch
-- **Clean Foundation**: Understand basic ASP.NET Core structure
-- **Learning Path**: See how applications evolve from templates
-- **Best Practices**: Standard project organization and conventions
-- **Extensibility**: Ready platform for adding custom functionality
-
-## Learning Outcomes
-
-This branch demonstrates:
-- **ASP.NET Core 8.0 fundamentals** and project structure
-- **MVC pattern basics** with controllers and views
-- **Standard web application** setup and configuration
-- **Foundation concepts** before adding custom functionality
-- **Modern .NET development** practices and conventions
-
-## Next Steps
-
-### Explore Other Branches
-1. **1.0-client-side Branch**: See client-side JavaScript implementation
-   ```bash
-   git checkout 1.0-client-side
-   ```
-
-2. **2.0-server-side Branch**: Explore server-side MVC architecture
-   ```bash
-   git checkout 2.0-server-side
-   ```
-
-### Development Path
-- **Start Here**: Understand the foundation
-- **Move to 1.0-client-side**: Learn client-side development
-- **Progress to 2.0-server-side**: Master server-side architecture
-- **Compare Approaches**: Understand trade-offs between implementations
-
-### Extension Ideas
-- Add database integration
-- Implement user authentication
-- Create REST API endpoints
-- Add unit testing
-- Implement logging and monitoring
-
-## Benefits of This Foundation
-
-1. **Standard Structure**: Industry-standard ASP.NET Core organization
-2. **Scalable Architecture**: Ready for enterprise-level features
-3. **Modern Framework**: Latest .NET 8.0 capabilities
-4. **Development Ready**: Configured for immediate development
-5. **Learning Platform**: Perfect starting point for understanding web development
-
-This main branch serves as the essential foundation that both specialized branches build upon, demonstrating how a simple template can evolve into sophisticated applications with different architectural approaches.
+Happy coding!
