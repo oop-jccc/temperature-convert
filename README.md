@@ -145,13 +145,13 @@ ASP.NET Core MVC
 
 ### What Other Branches Add
 
-#### **1.0-ui Branch**
+#### **1.0-client-side Branch**
 - **Client-Side Temperature Conversion**: JavaScript-based real-time conversion
 - **Interactive UI**: Input fields with instant feedback
 - **No Server Processing**: All calculations done in browser
 - **Real-Time Experience**: Immediate results without form submission
 
-#### **2.0-server Branch**
+#### **2.0-server-side Branch**
 - **Server-Side Processing**: Full MVC implementation with models
 - **Form-Based Workflow**: Traditional web form submission
 - **Data Models**: Proper separation with dedicated model classes
@@ -176,20 +176,20 @@ This branch demonstrates:
 ## Next Steps
 
 ### Explore Other Branches
-1. **1.0-ui Branch**: See client-side JavaScript implementation
+1. **1.0-client-side Branch**: See client-side JavaScript implementation
    ```bash
-   git checkout 1.0-ui
+   git checkout 1.0-client-side
    ```
 
-2. **2.0-server Branch**: Explore server-side MVC architecture
+2. **2.0-server-side Branch**: Explore server-side MVC architecture
    ```bash
-   git checkout 2.0-server
+   git checkout 2.0-server-side
    ```
 
 ### Development Path
 - **Start Here**: Understand the foundation
-- **Move to 1.0-ui**: Learn client-side development
-- **Progress to 2.0-server**: Master server-side architecture
+- **Move to 1.0-client-side**: Learn client-side development
+- **Progress to 2.0-server-side**: Master server-side architecture
 - **Compare Approaches**: Understand trade-offs between implementations
 
 ### Extension Ideas
