@@ -24,7 +24,15 @@
         "dotnet.server.useOmnisharp": true,
         "omnisharp.enableEditorConfigSupport": true,
         "omnisharp.enableImportCompletion": true,
-        "omnisharp.enableRoslynAnalyzers": true
+        "omnisharp.enableRoslynAnalyzers": true,
+        "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+        "dotnet.symbolSearch.searchReferenceAssemblies": false,
+        "csharp.semanticHighlighting.enabled": true,
+        "csharp.format.enable": true,
+        "csharp.suppressDotnetInstallWarning": true,
+        "dotnet.defaultSolution.disable": false,
+        "dotnet.preferCSharpExtension": true,
+        "extensions.showRecommendationsOnlyOnDemand": true
       }
     }
   },
