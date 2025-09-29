@@ -1,13 +1,11 @@
 {
-  "name": ".NET Development Environment",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/dotnet:2": {
-      "version": "8.0",
-      "installUsingApt": false
-    },
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+  "name": ".NET High-Performance Environment",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb"
   },
+
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,34 +14,30 @@
         "ms-dotnettools.vscode-dotnet-runtime",
         "GitHub.copilot",
         "GitHub.copilot-chat",
+        "septag.visual-assist-dark",
         "jeff-hykin.better-c-sharp-syntax",
+        "icsharpcode.ilspy-vscode",
         "patcx.vscode-nuget-gallery",
         "ryanluker.vscode-coverage-gutters",
         "humao.rest-client"
-      ],
-      "settings": {
-        "dotnet.server.useOmnisharp": true,
-        "omnisharp.enableEditorConfigSupport": true,
-        "omnisharp.enableImportCompletion": true,
-        "omnisharp.enableRoslynAnalyzers": true,
-        "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
-        "dotnet.symbolSearch.searchReferenceAssemblies": false,
-        "csharp.semanticHighlighting.enabled": true,
-        "csharp.format.enable": true,
-        "csharp.suppressDotnetInstallWarning": true,
-        "dotnet.defaultSolution": "TemperatureConvert/TemperatureConvert.sln",
-        "dotnet.preferCSharpExtension": true
-      }
+      ]
     }
   },
-  "forwardPorts": [5000, 5001, 7065, 5076],
+  "forwardPorts": [5000, 5299, 8080],
   "portsAttributes": {
-    "5000": { "label": "HTTP", "protocol": "http" },
-    "5001": { "label": "HTTPS", "protocol": "https" },
-    "7065": { "label": "HTTPS Dev", "protocol": "https" },
-    "5076": { "label": "HTTP Dev", "protocol": "http" }
+    "5000": {
+      "label": "HTTP (ASP.NET Core)",
+      "protocol": "http"
+    },
+    "5299": {
+      "label": "HTTP (Dynamic)",
+      "protocol": "http"
+    },
+    "8080": {
+      "label": "HTTP (Container Default)",
+      "protocol": "http"
+    }
   },
-  "postCreateCommand": "dotnet restore \"TemperatureConvert/TemperatureConvert.sln\"",
+  "postCreateCommand": "dotnet restore dynamic-json.sln && echo 'Container setup complete! Run: dotnet run --launch-profile dynamic_json_codespaces'",
   "remoteUser": "vscode"
 }
-
