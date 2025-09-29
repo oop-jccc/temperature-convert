@@ -11,6 +11,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "ms-dotnettools.csdevkit",
         "ms-dotnettools.csharp",
         "ms-dotnettools.vscode-dotnet-runtime",
         "GitHub.copilot",
@@ -30,31 +31,19 @@
         "csharp.semanticHighlighting.enabled": true,
         "csharp.format.enable": true,
         "csharp.suppressDotnetInstallWarning": true,
-        "dotnet.defaultSolution.disable": false,
-        "dotnet.preferCSharpExtension": true,
-        "extensions.showRecommendationsOnlyOnDemand": true
+        "dotnet.defaultSolution": "TemperatureConvert/TemperatureConvert.sln",
+        "dotnet.preferCSharpExtension": true
       }
     }
   },
   "forwardPorts": [5000, 5001, 7065, 5076],
   "portsAttributes": {
-    "5000": {
-      "label": "HTTP",
-      "protocol": "http"
-    },
-    "5001": {
-      "label": "HTTPS",
-      "protocol": "https"
-    },
-    "7065": {
-      "label": "HTTPS Dev",
-      "protocol": "https"
-    },
-    "5076": {
-      "label": "HTTP Dev",
-      "protocol": "http"
-    }
+    "5000": { "label": "HTTP", "protocol": "http" },
+    "5001": { "label": "HTTPS", "protocol": "https" },
+    "7065": { "label": "HTTPS Dev", "protocol": "https" },
+    "5076": { "label": "HTTP Dev", "protocol": "http" }
   },
-  "postCreateCommand": "dotnet restore TemperatureConvert/TemperatureConvert/TemperatureConvert.csproj",
+  "postCreateCommand": "dotnet restore \"TemperatureConvert/TemperatureConvert.sln\"",
   "remoteUser": "vscode"
 }
+
